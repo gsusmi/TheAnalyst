@@ -28,7 +28,7 @@ module Job
     end
 
     def run
-      # Fetch items!
+      # Fetch items! Resolve items!
     end
   end
 end
