@@ -11,13 +11,13 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 # Component requirements
 gem 'sass'
 gem 'haml'
-gem 'dm-sqlite-adapter'
 gem 'dm-validations'
 gem 'dm-timestamps'
 gem 'dm-migrations'
 gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-core'
+gem 'dm-redis-adapter'
 
 # Test requirements
 gem 'shoulda', :group => "test"
