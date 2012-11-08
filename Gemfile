@@ -19,6 +19,8 @@ gem 'dm-aggregates'
 gem 'dm-core'
 gem 'dm-redis-adapter'
 
+gem 'rufus-scheduler'
+
 # Test requirements
 gem 'shoulda', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"

@@ -7,4 +7,5 @@ class Item
   property :metadata_known, Boolean
   property :description, String
   property :item_type, String
+  property :item_stat, String
 end
