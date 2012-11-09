@@ -31,7 +31,7 @@ module Job
 
     def run
       # Fetch items! Resolve items!
-      named_beers = AnalystLib.fetch_list(self.list_url)
+      named_beers = AnalystLib.beer_list(self.list_url)
       Task::BeerSync.sync_named_beers(named_beers)
     end
   end

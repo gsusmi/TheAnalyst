@@ -4,7 +4,7 @@ module Task
   class BeerMetadataSync
     def self.sync_metadata(beer)
       STDERR.puts("sync_metadata: #{beer}")
-      meta = AnalystLib.fetch_metadata(beer.name)
+      meta = AnalystLib.beer_metadata(beer.name)
       beer.attributes = {
         rating_score: meta.rating_score.to_i,
         item_type: meta.item_type,
