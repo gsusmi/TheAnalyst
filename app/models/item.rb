@@ -40,10 +40,14 @@ class Item
   end
 
   def has_rating?
-    self.rating_score || self.rating_desc
+    (self.rating_score && self.rating_score > 0) || self.rating_desc
   end
 
   def has_type?
     self.item_type
+  end
+
+  def to_s
+    "Beer[#{self.name}]"
   end
 end

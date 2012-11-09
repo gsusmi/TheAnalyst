@@ -1,5 +1,7 @@
 # TODO: require list fetcher.
 require 'ostruct'
+require 'analyst-lib'
+require 'task/beer_sync'
 
 module Job
   class ItemListRefresh
@@ -29,6 +31,8 @@ module Job
 
     def run
       # Fetch items! Resolve items!
+      named_beers = AnalystLib.fetch_list(self.list_url)
+      Task::BeerSync.sync_named_beers(named_beers)
     end
   end
 end
