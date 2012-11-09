@@ -26,12 +26,13 @@ module Job
     end
 
     def list_url
-      @config[:list_url]
+      @config.url
     end
 
     def run
       # Fetch items! Resolve items!
-      named_beers = AnalystLib.beer_list(self.list_url)
+      STDERR.puts("SCRAPE: #{self.list_url}")
+      named_beers = AnalystLib.beer_list(self.list_url)[:drafts]
       Task::BeerSync.sync_named_beers(named_beers)
     end
   end
