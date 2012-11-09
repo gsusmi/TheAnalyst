@@ -1,6 +1,6 @@
 Analyst.controller do
   layout :main
   get '/' do
-    render :haml, "Hello"
+    render("main/index", locals: { items: Item.all })
   end
 end
