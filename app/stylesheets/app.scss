@@ -1,0 +1,28 @@
+.annotation {
+  font-size: smaller;
+  position: absolute;
+  text-align: right;
+  top: 1.1em;
+  right: 2em;
+  width: 6em;
+}
+
+.bio {
+  margin-right: 6em;
+
+  .name {
+    white-space: nowrap;
+  }
+}
+
+.type {
+  color: #aaa;
+}
+
+.stat {
+  color: #a55;
+}
+
+.rating {
+  color: #5a5;
+}
