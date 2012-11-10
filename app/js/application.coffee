@@ -67,7 +67,3 @@ window.App =
 
   name: (item) ->
     $(item).find('.name').text().toLowerCase()
-
-  sortABV: ->
-    $('li.beer').sortElements((a, b) =>
-      @compare(@abv(a), @abv(b)))
