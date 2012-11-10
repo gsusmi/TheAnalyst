@@ -40,7 +40,7 @@ window.App =
     cachedExtractor = (e) ->
       value = $(e).data(extractorName)
       if !value
-        value = { value: extractorFn(e) }
+        value = (value: extractorFn(e))
         $(e).data(extractorName, value)
       value.value
 
