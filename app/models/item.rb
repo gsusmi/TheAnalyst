@@ -27,11 +27,16 @@ class Item
   def rating_description
     return self.rating_desc if self.rating_desc
     return nil unless self.rating_score
-    "BA: #{self.rating_score}"
+    "BA: #{self.rating_display_score}"
+  end
+
+  def rating_display_score
+    return "N/A" if self.rating_score <= 0
+    self.rating_score
   end
 
   def abv_text
-    return "? ABV" unless self.abv
+    return nil unless self.abv
     sprintf("%.f%% ABV", self.abv)
   end
 

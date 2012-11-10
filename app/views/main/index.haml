@@ -1,12 +1,4 @@
 %ul.beer-list(data-role="listview" data-inset="true" data-filter="true")
   - items.each do |item|
     %li
-      .bio
-        .name= item.name
-        - if item.has_type?
-          .type= item.item_type
-      .annotation
-        - if item.has_rating?
-          .rating= item.rating_description
-        - if item.has_abv?
-          .stat= item.abv_text
+      = partial('main/item', locals: { item: item })

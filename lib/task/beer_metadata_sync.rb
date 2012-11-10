@@ -6,7 +6,7 @@ module Task
       STDERR.puts("sync_metadata: #{beer}")
       meta = AnalystLib.beer_metadata(beer.name)
       beer.attributes = {
-        rating_score: meta.rating_score.to_i,
+        rating_score: self.numeric_rating(meta.rating_score),
         item_type: meta.type,
         abv: meta.abv && BigDecimal.new(meta.abv, 2),
         metadata_known: true
@@ -16,6 +16,11 @@ module Task
       STDERR.puts("Could not save #{beer}: #{beer.errors.map(&:to_s)}")
     rescue AnalystLib::MetadataNotFound
       STDERR.puts("No metadata known for #{beer}")
+    end
+
+    def self.numeric_rating(rating)
+      return -1 unless rating =~ /^\d+$/
+      rating.to_i
     end
   end
 end
