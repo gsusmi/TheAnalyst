@@ -7,7 +7,7 @@ module Task
       meta = AnalystLib.beer_metadata(beer.name)
       beer.attributes = {
         rating_score: meta.rating_score.to_i,
-        item_type: meta.item_type,
+        item_type: meta.type,
         abv: meta.abv.to_f
       }
       beer.save
