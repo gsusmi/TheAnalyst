@@ -1,7 +1,10 @@
 .controls(data-role="controlgroup" data-mini="true" data-type="horizontal")
-  %a(id="sort-top-rated" href="#" data-role="button") Top Rated
+  %a.selected(id="sort-top-rated" href="#" data-role="button") Top Rated
   %a(id="sort-abv" href="#" data-role="button") By ABV
   %a(id="sort-name" href="#" data-role="button") Name
 
 %ul#beer-list(data-role="listview" data-inset="true")
   = partial('main/item_list', locals: { items: items })
+
+:javascript
+  App.attachSortHandlers();

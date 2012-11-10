@@ -1,5 +1,5 @@
 .bio
-  %a{href: item.external_link_or_google}= item.name
+  %a.name{href: item.external_link_or_google}= item.name
   .type= (item.item_type || '&nbsp;')
 .annotation
   .rating= item.rating_description || '&nbsp;'

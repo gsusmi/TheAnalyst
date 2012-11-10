@@ -1,5 +1,11 @@
 .controls {
   text-align: center;
+
+  .selected {
+    background: #0480B5;
+    color: #fff;
+    text-shadow: none;
+  }
 }
 
 .annotation {

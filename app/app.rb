@@ -4,7 +4,14 @@ class Analyst < Padrino::Application
   register Padrino::Mailer
   register Padrino::Helpers
 
+  register Sinatra::AssetPack
+
   enable :sessions
+
+  assets {
+    serve '/js', from: 'js'
+    js :app, ['/js/*.js']
+  }
 
   ##
   # Caching support

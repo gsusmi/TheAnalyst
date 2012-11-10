@@ -7,6 +7,8 @@ source :rubygems
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
+gem 'sinatra-assetpack', require: 'sinatra/assetpack'
+gem 'coffee-script'
 
 # Component requirements
 gem 'sass'
