@@ -16,6 +16,9 @@ class Item
   # Type of beer, flemish red, wheat, etc.
   property :item_type, String
 
+  # URL to more detail on BeerAdvocate, or Google if BA draws a blank.
+  property :external_link, String
+
   # Alcohol by volume expressed as a percentage (i.e. 7.5 for 7.5% ABV)
   property :abv, Decimal, scale: 2
 
