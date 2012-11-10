@@ -31,14 +31,22 @@ jQuery.fn.sortElements = do ->
 
 window.App =
   attachSortHandlers: ->
-    $('#sort-top-rated').on('click', @sorter(@rating, true))
-    $('#sort-abv').on('click', @sorter(@abv))
-    $('#sort-name').on('click', @sorter(@name))
+    $('#sort-top-rated').on('click', @sorter('rating', true))
+    $('#sort-abv').on('click', @sorter('abv'))
+    $('#sort-name').on('click', @sorter('name'))
 
-  sorter: (extractorFn, descending=false) ->
-    comparator = (a, b) => @compare(extractorFn(a), extractorFn(b))
+  sorter: (extractorName, descending=false) ->
+    extractorFn = @[extractorName]
+    cachedExtractor = (e) ->
+      value = $(e).data(extractorName)
+      if !value
+        value = { value: extractorFn(e) }
+        $(e).data(extractorName, value)
+      value.value
+
+    comparator = (a, b) => @compare(cachedExtractor(a), cachedExtractor(b))
     if descending
-      comparator = (a, b) => @compare(extractorFn(b), extractorFn(a))
+      comparator = (a, b) => @compare(cachedExtractor(b), cachedExtractor(a))
 
     ->
       $('.controls a').removeClass('selected')
