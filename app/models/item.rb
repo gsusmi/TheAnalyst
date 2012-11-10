@@ -1,3 +1,5 @@
+require 'cgi'
+
 class Item
   include DataMapper::Resource
 
@@ -31,6 +33,11 @@ class Item
     return self.rating_desc if self.rating_desc
     return nil unless self.rating_score
     "BA: #{self.rating_display_score}"
+  end
+
+  def external_link_or_google
+    return self.external_link if self.external_link
+    "http://www.google.com/search?q=" + CGI.escape(self.name)
   end
 
   def rating_display_score
