@@ -19,7 +19,7 @@ module Task
       end
 
       beers_needing_sync.each { |beer|
-        BeerMetadataSync.sync_metadata(beer)
+        BeerMetadataSync.sync_metadata(Item.new(name: beer.name, id: beer.id))
       }
     end
 

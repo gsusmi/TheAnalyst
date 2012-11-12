@@ -13,10 +13,10 @@ DataMapper.logger = logger
 DataMapper::Property::String.length(255)
 DataMapper::Model.raise_on_save_failure = true
 
-redis_config = { adapter: 'sqlite3', database: 'redis://localhost:6379' }
+redis_config = { adapter: 'redis', database: 'redis://localhost:6379' }
 
 case Padrino.env
-  when :development then DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', 'dev.db'))
+  when :development then DataMapper.setup(:default, redis_config)
   when :production  then DataMapper.setup(:default, redis_config)
   when :test        then DataMapper.setup(:default, redis_config)
 end

@@ -8,4 +8,6 @@ vendor/gems/*
 .rvmrc
 project.el
 public/stylesheets/*.css
+*.rdb
+*.log
 db/*.db

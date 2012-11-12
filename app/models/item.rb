@@ -63,6 +63,6 @@ class Item
   end
 
   def to_s
-    "Beer[#{self.name}]"
+    "Beer[##{self.id}: #{self.name}]"
   end
 end

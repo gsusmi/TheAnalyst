@@ -19,7 +19,7 @@ gem 'dm-migrations'
 gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-core'
-gem 'dm-sqlite-adapter'
+gem 'dm-redis-adapter'
 
 gem 'rufus-scheduler'
 
