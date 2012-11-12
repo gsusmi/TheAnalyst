@@ -48,7 +48,7 @@ common: &default_settings
   # The newrelic agent generates its own log file to keep its logging
   # information separate from that of your application.  Specify its
   # log level here.
-  log_level: info
+  log_level: error
   
   # The newrelic agent communicates with the New Relic service via http by
   # default.  If you want to communicate via https to increase
@@ -181,7 +181,7 @@ development:
   # 'enabled').
   # NOTE: for initial evaluation purposes, you may want to temporarily 
   # turn agent communication on in development mode.
-  monitor_mode: false
+  monitor_mode: true
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will 
   # present performance information on the last 100 transactions you have
