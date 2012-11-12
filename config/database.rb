@@ -15,7 +15,7 @@ DataMapper::Model.raise_on_save_failure = true
 
 STDERR.puts("ENV: #{ENV.inspect}")
 
-uri = URI.parse(ENV["REDISTOGO_URL"]) || 'redis://localhost:6379'
+uri = URI.parse(ENV["REDISTOGO_URL"] || 'redis://localhost:6379')
 
 redis_config = { adapter: 'redis', host: uri.host, port: uri.port, password: uri.password }
 

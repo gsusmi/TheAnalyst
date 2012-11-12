@@ -9,7 +9,7 @@ module Task
         rating_score: self.numeric_rating(meta.rating_score),
         external_link: meta.external_link,
         item_type: meta.type,
-        abv: meta.abv && BigDecimal.new(meta.abv, 2),
+        abv: meta.abv && BigDecimal.new(sprintf("%.2f", meta.abv), 2),
         metadata_known: true
       }
       beer.save
