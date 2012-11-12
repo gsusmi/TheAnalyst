@@ -17,6 +17,8 @@ STDERR.puts("ENV: #{ENV.inspect}")
 
 redis_config = { adapter: 'redis', database: ENV["REDISTOGO_URL"] || 'redis://localhost:6379' }
 
+STDERR.puts("redis_config: #{redis_config.inspect} ENV: #{ENV['REDISTOGO_URL']}")
+
 case Padrino.env
   when :development then DataMapper.setup(:default, redis_config)
   when :production  then DataMapper.setup(:default, redis_config)
