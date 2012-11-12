@@ -34,6 +34,7 @@ window.App =
     $('#sort-top-rated').on('click', @sorter('rating', true))
     $('#sort-abv').on('click', @sorter('abv'))
     $('#sort-name').on('click', @sorter('name'))
+    $('#sort-top-rated').trigger('click')
 
   sorter: (extractorName, descending=false) ->
     extractorFn = @[extractorName]
