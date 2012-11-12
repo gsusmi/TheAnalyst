@@ -32,6 +32,8 @@ gem 'rack-test', :require => "rack/test", :group => "test"
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'pry'
 end
