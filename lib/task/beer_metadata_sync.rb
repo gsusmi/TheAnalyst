@@ -20,6 +20,7 @@ module Task
     end
 
     def self.numeric_rating(rating)
+      return nil if !rating || rating.trim.empty?
       return -1 unless rating =~ /^\d+$/
       rating.to_i
     end
