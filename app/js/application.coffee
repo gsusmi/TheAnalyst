@@ -36,7 +36,20 @@ window.App =
     $('#sort-name').on('click', @sorter('name'))
     $('#sort-top-rated').trigger('click')
 
-  sorter: (extractorName, descending=false) ->
+  chainedSorts: (extractors...) ->
+    seen_extractors = { }
+    filtered_extractors =
+      for extractor in extractors when !seen_extractors[extractor[0]]
+        seen_extractors[extractor] = true
+        extractor
+    sorters = (@sortComparator(ex[0], ex[1]) for ex in filtered_extractors)
+    (a, b) ->
+      for s in sorters
+        result = s(a, b)
+        return result if result
+      0
+
+  sortComparator: (extractorName, descending=false) ->
     extractorFn = @[extractorName]
     cachedExtractor = (e) ->
       value = $(e).data(extractorName)
@@ -48,7 +61,10 @@ window.App =
     comparator = (a, b) => @compare(cachedExtractor(a), cachedExtractor(b))
     if descending
       comparator = (a, b) => @compare(cachedExtractor(b), cachedExtractor(a))
+    comparator
 
+  sorter: (extractorName, descending=false) ->
+    comparator = @chainedSorts([extractorName, descending], ['name'])
     ->
       $('.controls a').removeClass('selected')
       $(this).addClass('selected')
