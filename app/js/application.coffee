@@ -31,10 +31,11 @@ jQuery.fn.sortElements = do ->
 
 window.App =
   attachSortHandlers: ->
-    $('#sort-top-rated').on('click', @sorter('rating', true))
-    $('#sort-abv').on('click', @sorter('abv'))
-    $('#sort-name').on('click', @sorter('name'))
-    $('#sort-top-rated').trigger('click')
+    event = 'mousedown'
+    $('#sort-top-rated').on(event, @sorter('rating', true))
+    $('#sort-abv').on(event, @sorter('abv'))
+    $('#sort-name').on(event, @sorter('name'))
+    $('#sort-top-rated').trigger(event)
 
   chainedSorts: (extractors...) ->
     seen_extractors = { }
