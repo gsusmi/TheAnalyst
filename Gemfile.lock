@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/gsusmi/Analyst-Lib
-  revision: bc958c63d1aee80ce3caad5838643e60b57b3257
+  revision: b851c78a72eb088d6921bcbc20e0d9ef11529520
   specs:
     analyst-lib (1.0.1)
       nokogiri
