@@ -12,7 +12,7 @@ window.Beers = ($scope) ->
     if angular.isArray(key) then key[0] else key
 
   $scope.selectedCls = (key) ->
-    if key == $scope.ordering.key then 'selected' else ''
+    if key == $scope.orderKey() then 'selected' else ''
 
   $scope.sort = (key, reverse=false) ->
     name = if typeof(key) == 'function' then key.name else key
