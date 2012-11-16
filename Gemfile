@@ -11,6 +11,7 @@ gem 'sinatra-assetpack', require: 'sinatra/assetpack'
 gem 'coffee-script'
 
 # Component requirements
+gem 'json'
 gem 'sass'
 gem 'haml'
 gem 'dm-validations'

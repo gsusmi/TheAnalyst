@@ -150,6 +150,7 @@ DEPENDENCIES
   dm-timestamps
   dm-validations
   haml
+  json
   newrelic_rpm
   padrino (= 0.10.7)
   pry
