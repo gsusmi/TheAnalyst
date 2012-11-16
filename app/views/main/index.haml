@@ -1,16 +1,11 @@
 .beers(ng-controller="Beers")
   .controls(data-role="controlgroup" data-mini="true" data-type="horizontal")
-    %a(id="sort_rating_score"
-       ng-class="selectedCls(rating)"
-       ng-click="sort(rating, true)"
-       href="#" data-role="button") Top Rated
-    %a(id="sort_abv"
-       ng-class="selectedCls(abv)"
-       ng-click="sort(abv)"
-       href="#" data-role="button") By ABV
-    %a(id="sort_name"
-       ng-class="selectedCls('name')"
-       ng-click="sort('name')" href="#" data-role="button") Name
+    .ui-controlgroup-controls
+      %a(ng-repeat="sorter in sorters"
+         ng-class="selectedCls(sorter.key)"
+         ng-click="sort(sorter.key, sorter.reverse)"
+         href="#"
+         data-role="button") {{sorter.title}}
 
   %ul#beer-list(data-role="listview" data-inset="true")
     %li.beer(ng-repeat="beer in beers | orderBy:ordering.key:ordering.reverse")
