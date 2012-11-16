@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/gsusmi/Analyst-Lib
-  revision: a368de08af0f437405c77cdf3f0e6f52367b1539
+  revision: d929750c195c57ceffc68c50895db6321d3ce59c
   specs:
-    analyst-lib (1.0.1)
+    analyst-lib (1.0.3)
       nokogiri
 
 GEM
@@ -140,7 +140,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  analyst-lib!
+  analyst-lib (= 1.0.3)!
   coffee-script
   dm-aggregates
   dm-constraints
