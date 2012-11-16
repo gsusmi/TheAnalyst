@@ -10,9 +10,6 @@ window.Beers = ($scope) ->
 
   $scope.sort = (key, reverse=false) ->
     name = if typeof(key) == 'function' then key.name else key
-    $('.controls a').removeClass('selected')
-    $("#sort_#{name}").addClass('selected')
-
     if key != 'name'
       key = [key, if reverse then '-name' else 'name']
     $scope.ordering = (key: key, reverse: reverse)
