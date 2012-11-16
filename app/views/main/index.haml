@@ -16,7 +16,7 @@
     %li.beer(ng-repeat="beer in beers | orderBy:ordering.key:ordering.reverse")
       .bio
         %a.name(href="{{beer.external_link}}") {{beer.name}}
-        .type {{beer.type}}
+        .type {{beer.type || '&nbsp;'}}
       .annotation
         .rating {{beer.rating_description}}
         .stat {{beer.abv_text}}
