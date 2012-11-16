@@ -50,6 +50,23 @@ class Item
     sprintf("%.f%% ABV", self.abv)
   end
 
+  def abv_percentage
+    return nil unless self.abv
+    sprintf("%.f%%", self.abv)
+  end
+
+  def as_json
+    {
+      name: self.name,
+      type: self.item_type,
+      external_link: self.external_link_or_google,
+      rating_score: self.rating_score,
+      rating_description: self.rating_description,
+      abv: self.abv.to_f,
+      abv_text: self.abv_text
+    }
+  end
+
   def has_abv?
     self.abv
   end

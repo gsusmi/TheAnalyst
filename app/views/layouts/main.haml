@@ -1,5 +1,5 @@
 !!! 5
-%html
+%html(ng-app="")
   %head
     %title Beer List
     %meta(name="viewport" content="width=device-width, initial-scale=1")
@@ -7,6 +7,10 @@
           href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css")
     %script(src="http://code.jquery.com/jquery-1.8.2.min.js")
     %script(src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js")
+    %script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js")
+    %script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js")
+    %script(src="/vendor/js/jquery-mobile-angular-adapter-1.1.1.js")
+
     = stylesheet_link_tag('app')
     != js :app
   %body
