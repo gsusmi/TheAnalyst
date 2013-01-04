@@ -144,7 +144,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  analyst-lib (= 1.0.7)!
+  analyst-lib!
   coffee-script
   dm-aggregates
   dm-constraints

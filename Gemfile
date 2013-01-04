@@ -24,7 +24,7 @@ gem 'dm-redis-adapter'
 
 gem 'rufus-scheduler'
 
-gem 'analyst-lib', '1.0.7', git: 'https://github.com/gsusmi/Analyst-Lib'
+gem 'analyst-lib', git: 'https://github.com/gsusmi/Analyst-Lib'
 
 # Test requirements
 gem 'shoulda', :group => "test"
