@@ -32,8 +32,7 @@ module Job
     def run
       # Fetch items! Resolve items!
       STDERR.puts("SCRAPE: #{self.list_url}")
-      all_beers = AnalystLib.beer_list('http://www.google.com/')
-      STDERR.puts("Beer list: #{all_beers.inspect}")
+      all_beers = AnalystLib.beer_list(self.list_url)
       draft_beers = all_beers[:drafts]
       Task::BeerSync.sync_named_beers(draft_beers)
     end
