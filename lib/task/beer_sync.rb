@@ -3,6 +3,11 @@ require 'task/beer_metadata_sync'
 module Task
   class BeerSync
     def self.sync_named_beers(beer_name_list)
+      unless beer_name_list
+        STDERR.puts("No beers to sync, exiting")
+        return
+      end
+
       current_beer_names = Set.new(beer_name_list.map { |n| n.strip })
 
       Item.all.each do |beer|
