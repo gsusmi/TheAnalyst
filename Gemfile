@@ -14,7 +14,7 @@ gem 'coffee-script'
 gem 'json'
 gem 'sass'
 gem 'haml'
-gem 'therubyracer', :platform => :ruby
+gem 'therubyracer', '0.10', :platform => :ruby
 gem 'dm-validations'
 gem 'dm-timestamps'
 gem 'dm-migrations'
