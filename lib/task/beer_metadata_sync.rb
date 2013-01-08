@@ -5,7 +5,7 @@ module Task
     def self.sync_metadata(beer)
       STDERR.puts("sync_metadata: #{beer}")
       meta = AnalystLib.beer_metadata(beer.name)
-      raise AnalystLib::MetadataNotFound unless meta
+      return unless meta
 
       beer.attributes = {
         rating_score: self.numeric_rating(meta.rating_score),
